@@ -96,6 +96,10 @@ TJA1044 让控制器可以接入 CAN 总线。相比单纯串口，CAN 更适合
 - 补充云台响应测试数据，包括目标角度、实际角度、响应时间和稳态误差。
 - 后续如有固件开源，可增加编译、烧录、参数配置和日志输出说明。
 
+## Source Code
+
+本仓库已补充源码压缩包 `code/ch32v203-foc-gimbal-domain-controller-source-code.zip`，包含 CH32V203 FOC 云台域控制器相关固件工程。源码归档说明、SHA256 校验值和打包边界见 `docs/SOURCE_CODE.md`。
+
 ## License
 
 This hardware design is released under CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P-2.0). See LICENSE. If firmware is added later, place a separate software license in the firmware directory.
