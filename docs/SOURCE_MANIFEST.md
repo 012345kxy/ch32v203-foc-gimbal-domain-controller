@@ -2,14 +2,14 @@
 
 Project: CH32V203 FOC Gimbal Domain Controller
 
-This manifest records the published source archive added on 2026-08-25.
+This manifest records the published source archive.
 
 ## Archive
 
-- Path: $(System.Collections.Hashtable.Archive)
+- Path: `code/ch32v203-foc-gimbal-domain-controller-source-code.zip`
 - Size: 210.6 KB
 - Entries: 106
-- SHA256: $hash
+- SHA256: `44DBC02BA68E5A0D4D98276FA0B4E27207B096E28F8C20D61210372DA2167CA3`
 
 ## Scope
 

@@ -2,11 +2,11 @@
 
 ## 项目背景
 
-本项目是一款面向云台、机器人关节和多轴姿态控制场景的 FOC 云台域控制器。它的定位不是直接替代某一个电机驱动器，而是作为上层控制、姿态感知和通信协调节点，通过串口或 CAN 总线控制 FOC 云台，并结合 IMU 与地磁仪实现更稳定的姿态参考。
+本项目是一块面向云台、机器人关节和多轴姿态控制的 FOC 云台域控制器。它主要负责上层控制、姿态感知和通信转接，通过串口或 CAN 总线连接 FOC 云台驱动器。
 
-项目采用沁恒 CH32V203C8T6 作为主控，板载 MPU6050、HMC5883L、TJA1044、CH340E 和 Type-C 接口，支持 5-15V 宽电压输入。它可以用于手动遥控云台，也可以用于自稳模式下的自动控制。对机器人、无人机载荷云台、小型拍摄平台或教学实验来说，这类控制器的意义在于把“传感器数据、通信总线和控制指令”集中管理起来，让云台不只是能转，而是能被稳定、可调、可扩展地控制。
+项目采用 CH32V203C8T6 作为主控，板载 MPU6050、HMC5883L、TJA1044、CH340E 和 Type-C 接口，支持 5-15V 输入。它可以用于手动遥控云台，也可以用于自稳控制实验，把传感器数据、通信总线和控制指令集中到一块板上。
 
-这个项目的名字里有“域控制器”，它表达的是一种系统分工：FOC 驱动器负责电机底层力矩、速度或位置控制，而域控制器负责更高一层的姿态感知、模式切换、远程指令和总线通信。这样的结构更接近真实机器人系统，也更适合后续扩展多个执行器或多个传感器。
+整体分工比较清楚：FOC 驱动器负责电机底层控制，本板负责姿态参考、模式切换、远程指令和总线通信。后续如果要接多个执行器或多个传感器，也可以沿着这个结构继续扩展。
 
 当前目录包含立创 EDA 专业版硬件工程文件：
 
@@ -96,15 +96,15 @@ TJA1044 让控制器可以接入 CAN 总线。相比单纯串口，CAN 更适合
 - 补充云台响应测试数据，包括目标角度、实际角度、响应时间和稳态误差。
 - 后续如有固件开源，可增加编译、烧录、参数配置和日志输出说明。
 
-## Documentation Index
+## 文档入口
 
-- [Source code archive notes](docs/SOURCE_CODE.md)
-- [Source archive manifest](docs/SOURCE_MANIFEST.md)
-- [Firmware usage notes](docs/FIRMWARE_USAGE.md)
-- [Source verification checklist](docs/SOURCE_VERIFICATION.md)
-- [Assessment evidence checklist](docs/ASSESSMENT_EVIDENCE.md)
-- [Project photos](docs/PHOTOS.md)
-- [Open-source evidence index](docs/OPEN_SOURCE_EVIDENCE.md)
+- [源码压缩包说明](docs/SOURCE_CODE.md)
+- [源码清单](docs/SOURCE_MANIFEST.md)
+- [固件使用说明](docs/FIRMWARE_USAGE.md)
+- [源码检查清单](docs/SOURCE_VERIFICATION.md)
+- [项目照片](docs/PHOTOS.md)
+- [项目维护记录](docs/PROJECT_LOG.md)
+
 ## Source Code
 
 本仓库已补充源码压缩包 `code/ch32v203-foc-gimbal-domain-controller-source-code.zip`，包含 CH32V203 FOC 云台域控制器相关固件工程。源码归档说明、SHA256 校验值和打包边界见 `docs/SOURCE_CODE.md`。
